@@ -40,36 +40,59 @@ const partnershipInfo = ref({
 </script>
 
 <template>
-  <section class="partnership">
+  <section id="partnership" class="partnership-section">
     <div class="container">
-      <h2 class="section-title animate-on-scroll">{{ partnershipInfo.title }}</h2>
-      <p class="description animate-on-scroll">{{ partnershipInfo.description }}</p>
+      <h2 class="section-title animate-on-scroll">Сотрудничество</h2>
       
-      <div class="benefits-grid">
-        <div v-for="(benefit, index) in partnershipInfo.benefits" 
-             :key="index" 
-             class="benefit-card animate-on-scroll">
-          <h3 class="benefit-title">{{ benefit.title }}</h3>
-          <ul class="benefit-list">
-            <li v-for="(item, idx) in benefit.items" 
-                :key="idx" 
-                class="benefit-item">
-              <span class="check-icon">✓</span>
-              {{ item }}
-            </li>
+      <div class="partnership-grid">
+        <div class="partnership-card animate-on-scroll">
+          <div class="card-icon">🤝</div>
+          <h3>Дистрибьюторам</h3>
+          <p>Станьте официальным дистрибьютором Seven Dates в вашем регионе. Мы предлагаем выгодные условия сотрудничества и полную поддержку бизнеса.</p>
+          <ul class="benefits-list">
+            <li>Эксклюзивные права на территорию</li>
+            <li>Маркетинговая поддержка</li>
+            <li>Обучение персонала</li>
+            <li>Рекламные материалы</li>
+          </ul>
+        </div>
+
+        <div class="partnership-card animate-on-scroll">
+          <div class="card-icon">🏪</div>
+          <h3>Розничным сетям</h3>
+          <p>Расширьте ассортимент вашего магазина премиальным натуральным напитком. Привлекайте новую аудиторию и увеличивайте продажи.</p>
+          <ul class="benefits-list">
+            <li>Гибкие условия поставок</li>
+            <li>Поддержка продаж</li>
+            <li>POS-материалы</li>
+            <li>Программы лояльности</li>
+          </ul>
+        </div>
+
+        <div class="partnership-card animate-on-scroll">
+          <div class="card-icon">🍽️</div>
+          <h3>HoReCa</h3>
+          <p>Добавьте в свое меню уникальный безалкогольный напиток. Идеально подходит для ресторанов, кафе, отелей и кейтеринговых компаний.</p>
+          <ul class="benefits-list">
+            <li>Специальные условия</li>
+            <li>Обучение персонала</li>
+            <li>Брендированные материалы</li>
+            <li>Техническая поддержка</li>
           </ul>
         </div>
       </div>
 
-      <div class="sales-channels animate-on-scroll">
-        <h3 class="channels-title">Каналы сбыта</h3>
-        <div class="channels-grid">
-          <div v-for="(channel, index) in partnershipInfo.salesChannels" 
-               :key="index" 
-               class="channel-item">
-            <span class="channel-icon">🏪</span>
-            <span class="channel-text">{{ channel }}</span>
-          </div>
+      <div class="contact-block animate-on-scroll">
+        <h3>Свяжитесь с нами для обсуждения сотрудничества</h3>
+        <div class="contact-info">
+          <a href="tel:+998977574488" class="contact-link">
+            <span class="icon">📞</span>
+            +998 97 757 44 88
+          </a>
+          <a href="mailto:partnership@sevendates.uz" class="contact-link">
+            <span class="icon">✉️</span>
+            partnership@sevendates.uz
+          </a>
         </div>
       </div>
     </div>
@@ -77,135 +100,202 @@ const partnershipInfo = ref({
 </template>
 
 <style scoped>
-.partnership {
-  padding: var(--space-xl) 0;
-  background: rgb(250, 247, 237);
+.partnership-section {
+  padding: 6rem 0;
+  background: var(--gradient-section);
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 2rem;
 }
 
 .section-title {
   text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: var(--space-xl);
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
   color: var(--color-primary);
   font-family: var(--font-secondary);
-  font-weight: 400;
-  letter-spacing: 2px;
+  position: relative;
 }
 
-.description {
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--color-primary);
-  margin-bottom: var(--space-xl);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: var(--font-primary);
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-gold);
+  border-radius: 2px;
 }
 
-.benefits-grid {
+.partnership-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-xl);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.benefit-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
+.partnership-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.benefit-card:hover {
-  transform: translateY(-5px);
+.partnership-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-gold);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.benefit-title {
-  font-size: 2rem;
+.partnership-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.partnership-card:hover::before {
+  opacity: 1;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.partnership-card h3 {
+  font-size: 1.5rem;
   color: var(--color-primary);
-  margin-bottom: var(--space-md);
-  text-align: center;
+  margin-bottom: 1rem;
   font-family: var(--font-secondary);
-  font-weight: 400;
-  letter-spacing: 1.5px;
 }
 
-.benefit-list {
+.partnership-card p {
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.benefits-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.benefit-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  color: var(--color-text-light);
-  margin-bottom: var(--space-sm);
-  font-size: 1.1rem;
+.benefits-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--color-text);
 }
 
-.check-icon {
-  color: #4CAF50;
+.benefits-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
   font-weight: bold;
 }
 
-.sales-channels {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  backdrop-filter: blur(10px);
-}
-
-.channels-title {
+.contact-block {
   text-align: center;
-  font-size: 2.2rem;
-  color: var(--color-primary);
-  margin-bottom: var(--space-lg);
+  background: var(--color-primary);
+  border-radius: 20px;
+  padding: 3rem;
+  color: white;
+  margin-top: 4rem;
+}
+
+.contact-block h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--color-secondary);
   font-family: var(--font-secondary);
-  font-weight: 400;
-  letter-spacing: 1.5px;
 }
 
-.channels-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.channel-item {
+.contact-link {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  color: var(--color-text-light);
-  font-size: 1.1rem;
+  gap: 0.8rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  transition: all 0.3s ease;
 }
 
-.channel-icon {
-  font-size: 1.5rem;
+.contact-link:hover {
+  background: var(--color-secondary);
+  transform: translateY(-3px);
 }
 
-@media (min-width: 768px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
+.icon {
+  font-size: 1.4rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+  .partnership-section {
+    padding: 4rem 0;
   }
-  
-  .channels-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 
-@media (min-width: 1024px) {
-  .benefits-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .partnership-card {
+    padding: 2rem;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+  }
+
+  .partnership-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-block {
+    padding: 2rem;
+  }
+
+  .contact-block h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-link {
+    width: 100%;
+    justify-content: center;
   }
 }
 </style> 

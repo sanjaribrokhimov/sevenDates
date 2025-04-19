@@ -6,6 +6,7 @@ import Partnership from './components/Partnership.vue'
 import ProductSpecs from './components/ProductSpecs.vue'
 import ContactSection from './components/ContactSection.vue'
 import CompanyInfo from './components/CompanyInfo.vue'
+import SalesPoints from './components/SalesPoints.vue'
 import { onMounted } from 'vue'
 
 onMounted(() => {
@@ -49,9 +50,11 @@ onMounted(() => {
             <p class="hero-description animate-on-scroll">
               Натуральный финиковый напиток из Италии
             </p>
-            <div class="hero-features animate-on-scroll">
+            <div style="color: gold;" class="hero-features animate-on-scroll">
               <span class="feature hover-scale">Без красителей</span>
+              <br>
               <span class="feature hover-scale">Без консервантов</span>
+              <br>
               <span class="feature hover-scale">100% натуральный</span>
             </div>
             <a href="#about" class="btn learn-more animate-on-scroll">
@@ -66,6 +69,7 @@ onMounted(() => {
       </section>
 
       <MediaSection />
+      <SalesPoints />
       <AboutProduct />
       <CompanyInfo />
       <BrandStory />
@@ -295,10 +299,7 @@ onMounted(() => {
   left: -20px;
   right: -20px;
   bottom: -10px;
-  background: radial-gradient(circle at center,
-    rgba(255, 215, 0, 0.15) 0%,
-    transparent 70%
-  );
+  
   z-index: -1;
 }
 

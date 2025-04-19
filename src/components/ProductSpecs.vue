@@ -34,23 +34,62 @@ const productSpecs = ref({
 </script>
 
 <template>
-  <section class="product-specs">
+  <section id="specs" class="specs-section">
     <div class="container">
-      <h2 class="section-title animate-on-scroll">{{ productSpecs.title }}</h2>
-      <p class="description animate-on-scroll">{{ productSpecs.description }}</p>
-      
+      <h2 class="section-title animate-on-scroll">
+        Технические характеристики
+      </h2>
+
       <div class="specs-grid">
-        <div v-for="(spec, index) in productSpecs.specifications" 
-             :key="index" 
-             class="spec-card animate-on-scroll">
-          <h3 class="spec-title">{{ spec.category }}</h3>
-          <div class="spec-items">
-            <div v-for="(item, idx) in spec.items" 
-                 :key="idx" 
-                 class="spec-item">
-              <span class="spec-label">{{ item.label }}</span>
-              <span class="spec-value">{{ item.value }}</span>
-            </div>
+        <div class="spec-card animate-on-scroll">
+          <div class="spec-icon">📦</div>
+          <div class="spec-content">
+            <h3>Упаковка</h3>
+            <ul class="spec-list">
+              <li>Объем: 250 мл</li>
+              <li>Материал: Алюминий</li>
+              <li>Без БФА</li>
+              <li>Срок годности: 24 месяца</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="spec-card animate-on-scroll">
+          <div class="spec-icon">🌱</div>
+          <div class="spec-content">
+            <h3>Состав</h3>
+            <ul class="spec-list">
+              <li>Финиковый концентрат</li>
+              <li>Очищенная вода</li>
+              <li>Натуральные экстракты</li>
+              <li>Без консервантов</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="spec-card animate-on-scroll">
+          <div class="spec-icon">📊</div>
+          <div class="spec-content">
+            <h3>Пищевая ценность на 100мл</h3>
+            <ul class="spec-list">
+              <li>Энергетическая ценность: 45 ккал</li>
+              <li>Белки: 0.5 г</li>
+              <li>Жиры: 0 г</li>
+              <li>Углеводы: 11 г</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="spec-card animate-on-scroll">
+          <div class="spec-icon">🏆</div>
+          <div class="spec-content">
+            <h3>Сертификация</h3>
+            <ul class="spec-list">
+              <li>ISO 9001:2015</li>
+              <li>HACCP</li>
+              <li>Halal</li>
+              <li>FDA Registered</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -59,105 +98,130 @@ const productSpecs = ref({
 </template>
 
 <style scoped>
-.product-specs {
-  padding: var(--space-xl) 0;
-  background: rgb(250, 247, 237);
+.specs-section {
+  padding: 6rem 0;
+  background: #f0f7f0;  /* Очень светлый зеленый фон */
+  color: var(--color-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.specs-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;  /* Увеличил максимальную ширину для размещения 4 блоков */
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
   text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: var(--space-xl);
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
   color: var(--color-primary);
   font-family: var(--font-secondary);
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-.description {
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--color-text-light);
-  margin-bottom: var(--space-xl);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .specs-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
+  grid-template-columns: repeat(4, 1fr);  /* 4 блока в ряд */
+  gap: 2rem;
 }
 
 .spec-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(46, 74, 47, 0.1);
 }
 
 .spec-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.spec-title {
-  font-size: 2rem;
+.spec-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.spec-content h3 {
+  font-size: 1.3rem;
   color: var(--color-primary);
-  margin-bottom: var(--space-md);
-  text-align: center;
+  margin-bottom: 1rem;
   font-family: var(--font-secondary);
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: var(--space-sm);
 }
 
-.spec-items {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+.spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.spec-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.spec-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--color-text);
 }
 
-.spec-label {
-  color: var(--color-primary);
-  opacity: 0.8;
-  font-size: 1.1rem;
-  font-family: var(--font-secondary);
-  letter-spacing: 1px;
+.spec-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
 }
 
-.spec-value {
-  color: var(--color-primary);
-  font-weight: 500;
-  text-align: right;
-  font-family: var(--font-primary);
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1200px) {
   .specs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 768px) {
+  .specs-section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
   .specs-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .spec-card {
+    padding: 1.5rem;
+  }
+
+  .spec-icon {
+    font-size: 2rem;
+  }
+
+  .spec-content h3 {
+    font-size: 1.2rem;
   }
 }
 </style> 
