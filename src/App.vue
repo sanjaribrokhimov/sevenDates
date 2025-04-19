@@ -7,6 +7,7 @@ import ProductSpecs from './components/ProductSpecs.vue'
 import ContactSection from './components/ContactSection.vue'
 import CompanyInfo from './components/CompanyInfo.vue'
 import SalesPoints from './components/SalesPoints.vue'
+import AboutProduct from './components/AboutProduct.vue'
 import { onMounted } from 'vue'
 
 onMounted(() => {
@@ -68,15 +69,37 @@ onMounted(() => {
         </div>
       </section>
 
-      <MediaSection />
-      <SalesPoints />
-      <AboutProduct />
-      <CompanyInfo />
-      <BrandStory />
-      <ProductSpecs />
-      <Partnership />
-      <Benefits />
-      <ContactSection />
+      <section id="media">
+        <MediaSection />
+      </section>
+      
+      <section id="sales">
+        <SalesPoints />
+      </section>
+      
+      <section id="about">
+        <AboutProduct />
+      </section>
+      
+      <section id="company">
+        <CompanyInfo />
+      </section>
+      
+      <section id="story">
+        <BrandStory />
+      </section>
+      
+      <section id="specs">
+        <ProductSpecs />
+      </section>
+      
+      <section id="partnership">
+        <Partnership />
+      </section>
+      
+      <section id="contacts">
+        <ContactSection />
+      </section>
     </main>
   </div>
 </template>
@@ -238,25 +261,103 @@ onMounted(() => {
   object-fit: contain;
   transform: rotate(-15deg);
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+  animation: floatingCan 4s ease-in-out infinite;
+}
+
+@keyframes floatingCan {
+  0% {
+    transform: rotate(-15deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-8deg) translateY(-25px);
+  }
+  100% {
+    transform: rotate(-15deg) translateY(0px);
+  }
 }
 
 @media (max-width: 768px) {
   .hero-container {
     grid-template-columns: 1fr;
     padding: 2rem;
-    gap: var(--space-xl);
+    gap: 0;
+    text-align: center;
   }
 
   .hero-content {
     text-align: center;
+    order: 2;
+    padding-top: 2rem;
+  }
+
+  .hero-features {
+    display: none;
   }
 
   .hero-image {
+    order: 1;
     justify-content: center;
+    margin: 0 auto;
+    max-width: 80%;
+    margin-top: 3.5rem;
   }
 
   .can-image {
-    max-height: 60vh;
+    max-height: 50vh;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    animation: floatingCanMobile 4s ease-in-out infinite;
+  }
+
+  .main-title {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .learn-more {
+    margin: 1rem auto;
+    display: inline-block;
+  }
+}
+
+@keyframes floatingCanMobile {
+  0% {
+    transform: rotate(-15deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-10deg) translateY(-20px);
+  }
+  100% {
+    transform: rotate(-15deg) translateY(0px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 1rem;
+  }
+
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .can-image {
+    max-height: 45vh;
+  }
+
+  .hero-features {
+    font-size: 0.9rem;
   }
 }
 
@@ -343,70 +444,6 @@ onMounted(() => {
   }
   50% {
     filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.5));
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-  }
-
-  .hero-content {
-    text-align: center;
-    order: 2;
-    margin-top: 0;
-  }
-
-  .hero-image {
-    order: 1;
-    justify-content: center;
-    margin-top: 0;
-    transform: translateY(0);
-  }
-
-  .main-title {
-    font-size: 4rem;
-  }
-
-  .classic-text {
-    font-size: 2.5rem;
-  }
-
-  .hero-description {
-    font-size: 1.2rem;
-  }
-
-  .hero-features {
-    justify-content: center;
-  }
-
-  .feature {
-    padding: 0.5rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-title {
-    font-size: 3rem;
-  }
-
-  .classic-text {
-    font-size: 2rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .feature {
-    padding: 0.4rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .learn-more {
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
   }
 }
 </style>

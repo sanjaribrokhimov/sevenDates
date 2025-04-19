@@ -23,11 +23,11 @@ const toggleMobileMenu = () => {
       </button>
 
       <div class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
-        <a href="#about" class="nav-link hover-scale">О продукте</a>
         <a href="#sales" class="nav-link hover-scale">Точки продажи</a>
-        <a href="#benefits" class="nav-link hover-scale">Преимущества</a>
-        <a href="#media" class="nav-link hover-scale">Медиа</a>
-        <a href="#contacts" class="nav-link hover-scale">Контакты</a>
+        <a href="#about" class="nav-link hover-scale">О продукте</a>
+        <a href="#company" class="nav-link hover-scale">О компании</a>
+        <a href="#story" class="nav-link hover-scale">История бренда</a>
+        <a href="#specs" class="nav-link hover-scale">Характеристики</a>
         
         <div class="nav-contact-info">
           <a href="tel:+998977574488" class="nav-contact-link">
