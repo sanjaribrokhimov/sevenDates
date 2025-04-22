@@ -10,29 +10,29 @@
 
 :root {
   /* Основные цвета */
-  --color-primary: #2E4A2F;
-  --color-secondary: #D4AF37;
-  --color-background: #FAF7F2;
-  --color-text: #333333;
+  --color-primary: rgb(239, 205, 158);
+  --color-secondary: rgb(25, 62, 29);
+  --color-background: rgb(209, 190, 156);
+  --color-text: rgb(25, 62, 29);
   --color-white: #FFFFFF;
   --color-black: #000000;
-  --color-accent: #B38F00;
-  --color-section-alt: #F4EDE4;
-  --color-gold: #D4AF37;
-  --color-gold-light: #FFF3A1;
-  --color-gold-dark: #B38F00;
+  --color-accent: rgb(25, 62, 29);
+  --color-section-alt: rgb(209, 190, 156);
+  --color-gold: #2E4A2F;
+  --color-gold-light: #2E4A2F;
+  --color-gold-dark: #1E2F1F;
   
   /* Градиенты */
-  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, #1E2F1F 100%);
-  --gradient-secondary: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
-  --gradient-gold: linear-gradient(45deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold-dark) 100%);
-  --gradient-section: linear-gradient(170deg, var(--color-background) 0%, var(--color-section-alt) 100%);
+  --gradient-primary: linear-gradient(135deg, rgb(25, 62, 29) 0%, rgb(25, 62, 29) 100%);
+  --gradient-secondary: linear-gradient(135deg, rgb(25, 62, 29) 0%, rgb(25, 62, 29) 100%);
+  --gradient-gold: linear-gradient(45deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-primary) 100%);
+  --gradient-section: linear-gradient(170deg, rgb(209, 190, 156) 0%, rgb(209, 190, 156) 100%);
   
   /* Тени */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 4px rgba(25, 62, 29, 0.1);
+  --shadow-md: 0 4px 8px rgba(25, 62, 29, 0.1);
+  --shadow-lg: 0 8px 16px rgba(25, 62, 29, 0.1);
+  --shadow-xl: 0 12px 24px rgba(25, 62, 29, 0.1);
   
   /* Скругления */
   --radius-sm: 4px;
@@ -130,10 +130,11 @@ a {
 }
 
 .section {
- 
   position: relative;
-  overflow: hidden;
-  background: var(--gradient-section);
+  width: 100%;
+  overflow-x: hidden;
+  padding: var(--space-xl) 0;
+  background: var(--color-background);
 }
 
 .section:nth-child(even) {
@@ -167,7 +168,7 @@ a {
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: var(--space-lg);
   text-align: center;
-  color: var(--color-primary);
+  color: rgb(25, 62, 29);
   position: relative;
   padding-bottom: var(--space-sm);
 }
@@ -253,7 +254,7 @@ a {
 }
 
 .section-highlight {
-  background: linear-gradient(120deg, var(--color-section-alt), var(--color-white));
+  background: linear-gradient(120deg, var(--color-section-alt), rgb(255, 241, 199));
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   margin: var(--space-xl) 0;

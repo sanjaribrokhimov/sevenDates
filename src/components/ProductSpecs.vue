@@ -100,7 +100,6 @@ const productSpecs = ref({
 <style scoped>
 .specs-section {
   padding: 6rem 0;
-  background: #f0f7f0;  /* Очень светлый зеленый фон */
   color: var(--color-primary);
   position: relative;
   overflow: hidden;

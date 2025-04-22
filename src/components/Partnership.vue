@@ -83,15 +83,15 @@ const partnershipInfo = ref({
       </div>
 
       <div class="contact-block animate-on-scroll">
-        <h3>Свяжитесь с нами для обсуждения сотрудничества</h3>
+        <h3>Свяжитесь с нами</h3>
         <div class="contact-info">
           <a href="tel:+998977574488" class="contact-link">
             <span class="icon">📞</span>
             +998 97 757 44 88
           </a>
-          <a href="mailto:partnership@sevendates.uz" class="contact-link">
+          <a href="mailto:partner@sevendates.uz" class="contact-link">
             <span class="icon">✉️</span>
-            partnership@sevendates.uz
+            partner@sevendates.uz
           </a>
         </div>
       </div>
@@ -117,7 +117,6 @@ const partnershipInfo = ref({
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 4rem;
-  color: var(--color-primary);
   font-family: var(--font-secondary);
   position: relative;
 }
@@ -215,7 +214,7 @@ const partnershipInfo = ref({
 
 .contact-block {
   text-align: center;
-  background: var(--color-primary);
+  background: rgb(25, 62, 29);
   border-radius: 20px;
   padding: 3rem;
   color: white;
@@ -225,7 +224,7 @@ const partnershipInfo = ref({
 .contact-block h3 {
   font-size: 1.8rem;
   margin-bottom: 2rem;
-  color: var(--color-secondary);
+  color: white;
   font-family: var(--font-secondary);
 }
 

@@ -5,17 +5,28 @@
         Точки продаж в Ташкенте
       </h2>
       <p class="section-description animate-on-scroll">
-        Вы можете приобрести Seven Dates в сети магазинов MAKRO
+        Вы можете приобрести Seven Dates в сети магазинов MAKRO и на Uzum
       </p>
 
       <div class="sales-content">
         <div class="map-container animate-on-scroll">
           <div class="map-placeholder">
             <iframe 
-              src="https://www.openstreetmap.org/export/embed.html?bbox=69.1796875%2C41.2545%2C69.3359375%2C41.3545&amp;layer=mapnik&amp;marker=41.304559%2C69.257812"
-              style="width: 100%; height: 100%; border: none;"
+              src="https://yandex.com/map-widget/v1/?um=constructor%3A94d2eab8d759a8e5e0b52d026d62cd58211df6999de73c048b129c3ea0ec1633&amp;source=constructor"
+              width="100%"
+              height="100%"
+              frameborder="0"
               loading="lazy"
+              scrolling="no"
+              style="border-radius: 20px; pointer-events: none;"
             ></iframe>
+            <a 
+              href="https://yandex.com/map-widget/v1/?um=constructor%3A94d2eab8d759a8e5e0b52d026d62cd58211df6999de73c048b129c3ea0ec1633&amp;source=constructor" 
+              target="_blank" 
+              class="open-map-button"
+            >
+              Открыть карту
+            </a>
           </div>
         </div>
 
@@ -25,7 +36,7 @@
             <h3>MAKRO ЦУМ</h3>
             <p class="address">ул. Узбекистанская (ориентир: кафе BIBIGON)</p>
             <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://maps.google.com/?q=41.311559,69.267779" target="_blank" class="map-link">Открыть на карте →</a>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.267779%2C41.311559&z=16" target="_blank" class="map-link">Открыть на карте →</a>
           </div>
 
           <div class="location-card animate-on-scroll">
@@ -33,39 +44,39 @@
             <h3>MAKRO Нукусская</h3>
             <p class="address">ул. Нукусская</p>
             <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://maps.google.com/?q=41.325543,69.228745" target="_blank" class="map-link">Открыть на карте →</a>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.228745%2C41.325543&z=16" target="_blank" class="map-link">Открыть на карте →</a>
+          </div>
+
+          <div class="location-card animate-on-scroll">
+            <div class="location-icon">📍</div>
+            <h3>MAKRO Бобура</h3>
+            <p class="address">ул. Бобура (съезд с моста аэропорт в сторону Бобура с правой стороны в конце 9 этажного дома)</p>
+            <p class="work-hours">09:00 - 23:00</p>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.254444%2C41.288595&z=16" target="_blank" class="map-link">Открыть на карте →</a>
           </div>
 
           <div class="location-card animate-on-scroll">
             <div class="location-icon">📍</div>
             <h3>MAKRO Махтумкули</h3>
-            <p class="address">ул. Махтумкули, 134</p>
+            <p class="address">ул. Махтумкули</p>
             <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://maps.google.com/?q=41.288595,69.254444" target="_blank" class="map-link">Открыть на карте →</a>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.254165%2C41.302675&z=16" target="_blank" class="map-link">Открыть на карте →</a>
           </div>
 
           <div class="location-card animate-on-scroll">
             <div class="location-icon">📍</div>
-            <h3>MAKRO Саехат</h3>
-            <p class="address">Гостиница Саехат</p>
+            <h3>MAKRO СаЯхат</h3>
+            <p class="address">Мирзо Улугбекский район (гостиница СаЯхат)</p>
             <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://maps.google.com/?q=41.302675,69.254165" target="_blank" class="map-link">Открыть на карте →</a>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.267778%2C41.283333&z=16" target="_blank" class="map-link">Открыть на карте →</a>
           </div>
 
           <div class="location-card animate-on-scroll">
-            <div class="location-icon">📍</div>
-            <h3>MAKRO Аэропорт</h3>
-            <p class="address">Корейский аэропорт</p>
-            <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://maps.google.com/?q=41.283333,69.267778" target="_blank" class="map-link">Открыть на карте →</a>
-          </div>
-
-          <div class="location-card animate-on-scroll coming-soon">
-            <div class="location-icon">🔜</div>
-            <h3>Скоро открытие</h3>
-            <p class="address">Новые магазины MAKRO</p>
-            <p class="work-hours">Следите за обновлениями</p>
-            <span class="coming-soon-label">Скоро</span>
+            <div class="location-icon">🛍️</div>
+            <h3>Uzum Market</h3>
+            <p class="address">Онлайн магазин</p>
+            <p class="work-hours">Круглосуточно</p>
+            <a href="https://uzum.uz/sevendatesuz" target="_blank" class="map-link">Перейти в магазин →</a>
           </div>
         </div>
       </div>
@@ -114,12 +125,14 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .map-placeholder {
   width: 100%;
   height: 100%;
   background: #f0f0f0;
+  position: relative;
 }
 
 .locations-grid {
@@ -275,5 +288,27 @@
   border-radius: 50%;
   font-size: 0.8rem;
   font-weight: bold;
+}
+
+.open-map-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.open-map-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: var(--color-secondary);
+  color: white;
 }
 </style> 

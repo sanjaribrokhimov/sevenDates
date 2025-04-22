@@ -7,14 +7,15 @@
       
       <div class="about-content">
         <div class="product-image animate-on-scroll">
-          <img src="../assets/img1.png" alt="Seven Dates Classic" class="product-img">
+          <img src="../assets/img1.png" alt="Seven Dates Original" class="product-img">
         </div>
         
         <div class="product-info animate-on-scroll">
-          <h3 class="product-title">Seven Dates Classic</h3>
+          <h3 class="product-title">Seven Dates ORIGINAL</h3>
           <p class="product-description">
-            Натуральный финиковый напиток премиум-класса, созданный в Италии. 
+            Здоровый финиковый напиток премиум-класса, созданный в Италии. 
             Исключительно из отборных фиников, без добавления сахара, консервантов и искусственных красителей.
+            Полезная альтернатива газированным напиткам.
           </p>
           
           <div class="product-features">
@@ -23,12 +24,12 @@
               <span class="feature-text">100% натуральный состав</span>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">🚫</span>
-              <span class="feature-text">Без сахара и консервантов</span>
+              <span class="feature-icon">❤️</span>
+              <span class="feature-text">Полезный для здоровья</span>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">🏭</span>
-              <span class="feature-text">Производство в Италии</span>
+              <span class="feature-icon">📦</span>
+              <span class="feature-text">Картонная упаковка без пластика</span>
             </div>
             <div class="feature-item">
               <span class="feature-icon">🌍</span>
@@ -37,13 +38,14 @@
           </div>
           
           <div class="product-benefits">
-            <h4>Польза для здоровья:</h4>
+            <h4>Преимущества:</h4>
             <ul>
-              <li>Богат натуральными витаминами и минералами</li>
-              <li>Поддерживает энергетический баланс</li>
-              <li>Улучшает пищеварение</li>
-              <li>Содержит антиоксиданты</li>
-              <li>Подходит для вегетарианцев</li>
+              <li>Источник натуральных витаминов и минералов</li>
+              <li>Поддерживает здоровый образ жизни</li>
+              <li>Укрепляет иммунитет</li>
+              <li>Богат антиоксидантами</li>
+              <li>Натуральный источник энергии</li>
+              <li>Экологичная упаковка</li>
             </ul>
           </div>
         </div>
@@ -55,7 +57,7 @@
 <style scoped>
 .about-section {
   padding: 6rem 0;
-  background: var(--color-background);
+ color: black;
   position: relative;
   overflow: hidden;
 }
@@ -70,7 +72,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 4rem;
-  color: var(--color-primary);
+  color: var(--color-gold);
   font-family: var(--font-secondary);
 }
 
@@ -111,7 +113,7 @@
 
 .product-title {
   font-size: 2rem;
-  color: var(--color-primary);
+  color: var(--color-gold);
   font-family: var(--font-secondary);
   margin-bottom: 1rem;
 }
@@ -119,7 +121,6 @@
 .product-description {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--color-text);
   opacity: 0.9;
 }
 
@@ -138,7 +139,7 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(46, 74, 47, 0.1);
+  border: 1px solid var(--color-gold);
   transition: all 0.3s ease;
 }
 
@@ -154,7 +155,7 @@
 
 .feature-text {
   font-size: 1rem;
-  color: var(--color-text);
+  
   font-weight: 500;
 }
 
@@ -163,12 +164,11 @@
   padding: 2rem;
   border-radius: var(--radius-lg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(46, 74, 47, 0.1);
+  border: 1px solid var(--color-gold);
 }
 
 .product-benefits h4 {
   font-size: 1.3rem;
-  color: var(--color-primary);
   margin-bottom: 1.5rem;
   font-family: var(--font-secondary);
 }
@@ -184,7 +184,6 @@
 .product-benefits li {
   position: relative;
   padding-left: 2rem;
-  color: var(--color-text);
   line-height: 1.6;
 }
 

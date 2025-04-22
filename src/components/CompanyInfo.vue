@@ -105,7 +105,6 @@
 .story-block {
   width: 100%;
   max-width: 100%;
-  background: rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   box-shadow: var(--shadow-md);
@@ -119,7 +118,7 @@
 }
 
 .story-block h3 {
-  color: var(--color-primary);
+  color: rgb(25, 62, 29);
   margin-bottom: var(--space-md);
   font-size: 1.8rem;
 }
@@ -151,7 +150,7 @@
 }
 
 .quote-block {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #1E2F1F 100%);
+  background: linear-gradient(135deg, rgb(25, 62, 29) 0%, #1E2F1F 100%);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   color: var(--color-white);
@@ -186,7 +185,6 @@ cite {
 }
 
 .collaboration-block {
-  background: linear-gradient(120deg, var(--color-section-alt), var(--color-white));
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   box-shadow: var(--shadow-md);

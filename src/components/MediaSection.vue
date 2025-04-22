@@ -180,7 +180,7 @@ onMounted(() => {
   position: relative;
   overflow: hidden;
   padding: 8rem 2rem;
-  background: var(--gradient-gold);
+  background: rgb(239, 205, 158);
 }
 
 .section-background {
@@ -189,7 +189,7 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--gradient-gold);
+  background: rgb(239, 205, 158);
   z-index: -1;
 }
 
@@ -226,7 +226,7 @@ onMounted(() => {
 
 .title-accent {
   font-size: 4rem;
-  color: var(--color-primary);
+  color: rgb(25, 62, 29);
   position: relative;
   display: inline-block;
   font-family: var(--font-logo);
@@ -242,7 +242,7 @@ onMounted(() => {
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: var(--color-primary);
+  background: rgb(25, 62, 29);
 }
 
 .media-content {
@@ -253,7 +253,7 @@ onMounted(() => {
 }
 
 .product-info {
-  color: var(--color-primary);
+  color: rgb(25, 62, 29);
   opacity: 0;
   transform: translateX(-50px);
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
@@ -270,6 +270,7 @@ onMounted(() => {
   font-family: var(--font-logo);
   font-weight: 600;
   line-height: 1.4;
+  color: rgb(25, 62, 29);
 }
 
 .benefits-grid {
@@ -282,11 +283,11 @@ onMounted(() => {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(25, 62, 29, 0.1);
   padding: 1.5rem;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(25, 62, 29, 0.2);
   opacity: 0;
   transform: translateY(30px);
   animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -300,8 +301,8 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-primary);
-  color: var(--color-gold);
+  background: rgb(25, 62, 29);
+  color: rgb(239, 205, 158);
   border-radius: 50%;
   animation: float 3s ease-in-out infinite;
 }
@@ -310,30 +311,30 @@ onMounted(() => {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   font-family: var(--font-logo);
-  color: var(--color-primary);
+  color: rgb(25, 62, 29);
 }
 
 .benefit-content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--color-primary);
+  color: rgb(25, 62, 29);
   opacity: 0.9;
 }
 
 .product-features {
   margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(25, 62, 29, 0.1);
   padding: 2rem;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(25, 62, 29, 0.2);
 }
 
 .product-features h4 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-family: var(--font-logo);
-  color: var(--color-primary);
+  color: rgb(25, 62, 29);
 }
 
 .product-features ul {
@@ -348,14 +349,14 @@ onMounted(() => {
   position: relative;
   padding-left: 1.5rem;
   font-size: 1.1rem;
-  color: var(--color-primary);
+  color: rgb(25, 62, 29);
 }
 
 .product-features li::before {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--color-primary);
+  color: rgb(25, 62, 29);
   font-weight: bold;
 }
 
@@ -415,7 +416,7 @@ onMounted(() => {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: rgb(25, 62, 29);
   border: none;
   cursor: pointer;
   display: flex;
@@ -432,7 +433,7 @@ onMounted(() => {
 
 .play-icon {
   font-size: 2rem;
-  color: var(--color-gold);
+  color: rgb(239, 205, 158);
 }
 
 @keyframes patternMove {

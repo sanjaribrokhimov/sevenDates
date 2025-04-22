@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const storySections = ref([
   {
-    title: 'О продукте',
+    title: 'o продукте',
     content: 'Seven Dates Original — натуральный слабо газированный напиток на основе фиников, созданный в Италии и упакованный в Европе. Он отражает философию "чистый состав — настоящий вкус — без компромиссов".',
     image: '/assets/story1.jpg',
     features: [
@@ -30,7 +30,7 @@ const storySections = ref([
     ]
   },
   {
-    title: 'О компании',
+    title: 'o компании',
     content: 'METAMED — официальный представитель и дистрибьютор Seven Dates в СНГ, партнёр итальянской компании VitalyV. 25-летний опыт в логистике и дистрибуции позволяет нам обеспечить надежное сопровождение, бесперебойные поставки и развитие бренда на локальных рынках.',
     image: '/assets/story3.jpg',
     contact: {
@@ -46,7 +46,7 @@ const storySections = ref([
 <template>
   <section class="brand-story">
     <div class="container">
-      <h2 class="section-title animate-on-scroll">О Seven Dates</h2>
+      <h2 style="color: rgb(25, 62, 29);" class="section-title animate-on-scroll">О Seven Dates</h2>
       <div class="story-grid">
         <div v-for="(section, index) in storySections" 
              :key="index" 
@@ -66,26 +66,21 @@ const storySections = ref([
 
             <div v-if="section.contact" class="contact-info">
               <div class="contact-item">
-                <span class="contact-icon">📍</span>
+                <span class="contact-icon">-</span>
                 <span>{{ section.contact.address }}</span>
               </div>
+              
               <div class="contact-item">
-                <span class="contact-icon">🌐</span>
-                <span>{{ section.contact.instagram }}</span>
-              </div>
-              <div class="contact-item">
-                <span class="contact-icon">📧</span>
+                <span class="contact-icon">-</span>
                 <span>{{ section.contact.email }}</span>
               </div>
               <div class="contact-item">
-                <span class="contact-icon">📲</span>
+                <span class="contact-icon">-</span>
                 <span>{{ section.contact.phone }}</span>
               </div>
             </div>
           </div>
-          <div class="story-image">
-            <img :src="section.image" :alt="section.title" class="story-img">
-          </div>
+          
         </div>
       </div>
     </div>
@@ -146,7 +141,6 @@ const storySections = ref([
 
 .story-title {
   font-size: 2.2rem;
-  color: var(--color-primary);
   margin-bottom: var(--space-md);
   font-family: var(--font-secondary);
   font-weight: 400;
@@ -154,7 +148,6 @@ const storySections = ref([
 }
 
 .story-text {
-  color: var(--color-primary);
   opacity: 0.9;
   line-height: 1.6;
   margin-bottom: var(--space-md);

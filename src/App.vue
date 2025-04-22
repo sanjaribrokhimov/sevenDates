@@ -34,24 +34,22 @@ onMounted(() => {
     
     <main>
       <section class="hero-section">
-        <div class="animated-background">
-          <div class="animated-shape shape-line"></div>
-          <div class="animated-shape shape-circle"></div>
-          <div class="animated-shape shape-hexagon"></div>
-          <div class="animated-shape shape-line"></div>
-        </div>
-
         <div class="hero-container">
           <div class="hero-content">
-            <div class="logo-container animate-on-scroll">
-              <h1 class="main-title">
-                <span class="text-gradient">Seven Dates</span>
-              </h1>
+            <div class="logo-container">
+              <div class="title-wrapper">
+                <h1 class="main-title">
+                  <span class="text-gradient">Seven</span>
+                  <span class="text-gradient">Dates</span>
+                </h1>
+              </div>
+              <div class="product-type">PREMIUM HALAL НАПИТОК</div>
             </div>
             <p class="hero-description animate-on-scroll">
-              Натуральный финиковый напиток из Италии
+              Натуральный финиковый напиток из Италии 
+              <span class="flag">🇮🇹</span>
             </p>
-            <div style="color: gold;" class="hero-features animate-on-scroll">
+            <div style="color:black; font-weight: bold;" class="hero-features animate-on-scroll">
               <span class="feature hover-scale">Без красителей</span>
               <br>
               <span class="feature hover-scale">Без консервантов</span>
@@ -64,18 +62,14 @@ onMounted(() => {
             </a>
           </div>
           <div class="hero-image animate-on-scroll">
-            <img src=".//assets/img1.png" alt="Seven Dates Classic" class="can-image">
+            <img src="./assets/img1.png" alt="Seven Dates Classic" class="can-image">
           </div>
         </div>
       </section>
-
-      <section id="media">
-        <MediaSection />
-      </section>
       
-      <section id="sales">
-        <SalesPoints />
-      </section>
+
+
+
       
       <section id="about">
         <AboutProduct />
@@ -87,6 +81,14 @@ onMounted(() => {
       
       <section id="story">
         <BrandStory />
+      </section>
+
+      <section  id="media">
+        <MediaSection />
+      </section>
+
+      <section id="sales">
+        <SalesPoints />
       </section>
       
       <section id="specs">
@@ -119,12 +121,9 @@ onMounted(() => {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 0;
+  padding: 6rem 0 0 0;
   margin: 0;
-  background: linear-gradient(135deg, 
-    rgba(25, 40, 26, 0.95) 0%,
-    rgba(46, 74, 47, 0.9) 100%
-  );
+  background: rgb(209, 190, 156);
 }
 
 .animated-background {
@@ -309,21 +308,27 @@ onMounted(() => {
     animation: floatingCanMobile 4s ease-in-out infinite;
   }
 
+  .title-wrapper {
+    gap: 1rem;
+  }
+  
+  .dates-img {
+    width: 60px;
+    height: 60px;
+  }
+  
   .main-title {
-    font-size: 1.6rem;
-    text-align: center;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    line-height: 1.1;
   }
 
-  .hero-description {
-    font-size: 1.2rem;
-    text-align: center;
-    margin: 1rem 0;
+  .main-title .text-gradient:first-child {
+    display: block;
+    margin-bottom: 0.2em;
   }
 
-  .learn-more {
-    margin: 1rem auto;
-    display: inline-block;
+  .main-title .text-gradient:last-child {
+    display: block;
   }
 }
 
@@ -344,6 +349,11 @@ onMounted(() => {
     padding: 1rem;
   }
 
+  .dates-img {
+    width: 30px;
+    height: 30px;
+  }
+  
   .main-title {
     font-size: 1.4rem;
   }
@@ -362,46 +372,35 @@ onMounted(() => {
 }
 
 .logo-container {
-  animation: fadeInLeft 1s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.dates-img {
+  width: 90px;
+  height: 90px;
+  
+  object-fit: contain;
 }
 
 .main-title {
-  font-size: 8rem;
+  font-size: 6rem;
   line-height: 1;
-  margin-bottom: var(--space-sm);
+  margin: 0;
   position: relative;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
-               0 0 40px rgba(255, 215, 0, 0.2);
-  background: linear-gradient(135deg, 
-    #FFE08A 0%,
-    #FFD700 50%,
-    #FFB900 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.5));
-}
-
-.main-title::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -20px;
-  right: -20px;
-  bottom: -10px;
-  
-  z-index: -1;
+  color: rgb(25, 62, 29);
+  text-shadow: 2px 2px 4px rgba(25, 62, 29, 0.2);
+  white-space: nowrap;
 }
 
 .classic-text {
@@ -417,7 +416,7 @@ onMounted(() => {
 
 .hero-description {
   font-size: 1.5rem;
-  color:white;
+  color: rgb(25, 62, 29);
   margin-bottom: var(--space-lg);
   opacity: 0.9;
 }
@@ -425,13 +424,31 @@ onMounted(() => {
 .learn-more {
   font-size: 1.1rem;
   padding: 1rem 2.5rem;
-  background: var(--gradient-primary);
+  background: rgb(25, 62, 29);
+  color: white;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(25, 62, 29, 0.2);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 2rem;
+}
+
+.learn-more:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(25, 62, 29, 0.3);
+  background: rgb(35, 82, 39);
 }
 
 .btn-arrow {
   display: inline-block;
   margin-left: 0.5rem;
   transition: transform 0.3s ease;
+  color: white;
 }
 
 .btn:hover .btn-arrow {
@@ -445,5 +462,86 @@ onMounted(() => {
   50% {
     filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.5));
   }
+}
+
+.product-type {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  color: rgb(25, 62, 29);
+  margin-top: 0.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.flag {
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  background: rgb(209, 190, 156);
+  box-shadow: var(--shadow-lg);
+  border-bottom: 1px solid rgba(25, 62, 29, 0.1);
+}
+
+.nav-link {
+  color: rgb(25, 62, 29);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.logo {
+  color: rgb(25, 62, 29);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.media-section {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 2rem;
+  background: rgb(239, 205, 158);
+}
+
+.section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(239, 205, 158);
+  z-index: -1;
+}
+
+.nav-contact-info {
+  color: rgb(25, 62, 29);
+}
+
+.nav-contact-link {
+  color: rgb(25, 62, 29) !important;
+}
+
+.nav-social-link {
+  color: rgb(25, 62, 29) !important;
+  background: rgba(25, 62, 29, 0.1);
+}
+
+.nav-social-link:hover {
+  background: rgba(25, 62, 29, 0.2);
 }
 </style>
