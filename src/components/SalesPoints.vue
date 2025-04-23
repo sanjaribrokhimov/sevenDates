@@ -1,11 +1,17 @@
+<script setup>
+import { useTranslations } from '../stores/translations'
+
+const { t } = useTranslations()
+</script>
+
 <template>
   <section id="sales" class="sales-section">
     <div class="container">
       <h2 class="section-title animate-on-scroll">
-        Точки продаж в Ташкенте
+        {{ t('Точки продаж в Ташкенте') }}
       </h2>
       <p class="section-description animate-on-scroll">
-        Вы можете приобрести Seven Dates в сети магазинов MAKRO и на Uzum
+        {{ t('Вы можете приобрести Seven Dates в сети магазинов MAKRO и на Uzum') }}
       </p>
 
       <div class="sales-content">
@@ -25,7 +31,7 @@
               target="_blank" 
               class="open-map-button"
             >
-              Открыть карту
+              {{ t('Открыть карту') }}
             </a>
           </div>
         </div>
@@ -33,50 +39,50 @@
         <div class="locations-grid">
           <div class="location-card animate-on-scroll">
             <div class="location-icon">📍</div>
-            <h3>MAKRO ЦУМ</h3>
-            <p class="address">ул. Узбекистанская (ориентир: кафе BIBIGON)</p>
-            <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.267779%2C41.311559&z=16" target="_blank" class="map-link">Открыть на карте →</a>
+            <h3>{{ t('MAKRO Ц1') }}</h3>
+            <p class="address">{{ t('ул. Узбекистанская (ориентир: кафе BIBIGON)') }}</p>
+            <p class="work-hours">{{ t('09:00 - 23:00') }}</p>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.267779%2C41.311559&z=16" target="_blank" class="map-link">{{ t('Открыть на карте →') }}</a>
           </div>
 
           <div class="location-card animate-on-scroll">
             <div class="location-icon">📍</div>
-            <h3>MAKRO Нукусская</h3>
-            <p class="address">ул. Нукусская</p>
-            <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.228745%2C41.325543&z=16" target="_blank" class="map-link">Открыть на карте →</a>
+            <h3>{{ t('MAKRO Нукусская') }}</h3>
+            <p class="address">{{ t('ул. Нукусская') }}</p>
+            <p class="work-hours">{{ t('09:00 - 23:00') }}</p>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.228745%2C41.325543&z=16" target="_blank" class="map-link">{{ t('Открыть на карте →') }}</a>
           </div>
 
           <div class="location-card animate-on-scroll">
             <div class="location-icon">📍</div>
-            <h3>MAKRO Бобура</h3>
-            <p class="address">ул. Бобура (съезд с моста аэропорт в сторону Бобура с правой стороны в конце 9 этажного дома)</p>
-            <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.254444%2C41.288595&z=16" target="_blank" class="map-link">Открыть на карте →</a>
+            <h3>{{ t('MAKRO Бобура') }}</h3>
+            <p class="address">{{ t('ул. Бобура (съезд с моста аэропорт в сторону Бобура с правой стороны в конце 9 этажного дома)') }}</p>
+            <p class="work-hours">{{ t('09:00 - 23:00') }}</p>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.254444%2C41.288595&z=16" target="_blank" class="map-link">{{ t('Открыть на карте →') }}</a>
           </div>
 
           <div class="location-card animate-on-scroll">
             <div class="location-icon">📍</div>
-            <h3>MAKRO Махтумкули</h3>
-            <p class="address">ул. Махтумкули</p>
-            <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.254165%2C41.302675&z=16" target="_blank" class="map-link">Открыть на карте →</a>
+            <h3>{{ t('MAKRO Махтумкули') }}</h3>
+            <p class="address">{{ t('ул. Махтумкули') }}</p>
+            <p class="work-hours">{{ t('09:00 - 23:00') }}</p>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.254165%2C41.302675&z=16" target="_blank" class="map-link">{{ t('Открыть на карте →') }}</a>
           </div>
 
           <div class="location-card animate-on-scroll">
             <div class="location-icon">📍</div>
-            <h3>MAKRO СаЯхат</h3>
-            <p class="address">Мирзо Улугбекский район (гостиница СаЯхат)</p>
-            <p class="work-hours">09:00 - 23:00</p>
-            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.267778%2C41.283333&z=16" target="_blank" class="map-link">Открыть на карте →</a>
+            <h3>{{ t('MAKRO СаЯхат') }}</h3>
+            <p class="address">{{ t('Мирзо Улугбекский район (гостиница СаЯхат)') }}</p>
+            <p class="work-hours">{{ t('09:00 - 23:00') }}</p>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.267778%2C41.283333&z=16" target="_blank" class="map-link">{{ t('Открыть на карте →') }}</a>
           </div>
 
           <div class="location-card animate-on-scroll">
             <div class="location-icon">🛍️</div>
-            <h3>Uzum Market</h3>
-            <p class="address">Онлайн магазин</p>
-            <p class="work-hours">Круглосуточно</p>
-            <a href="https://uzum.uz/sevendatesuz" target="_blank" class="map-link">Перейти в магазин →</a>
+            <h3>{{ t('Uzum Market') }}</h3>
+            <p class="address">{{ t('Онлайн магазин') }}</p>
+            <p class="work-hours">{{ t('Круглосуточно') }}</p>
+            <a href="https://uzum.uz/sevendatesuz" target="_blank" class="map-link">{{ t('Перейти в магазин →') }}</a>
           </div>
         </div>
       </div>

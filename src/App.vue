@@ -8,7 +8,12 @@ import ContactSection from './components/ContactSection.vue'
 import CompanyInfo from './components/CompanyInfo.vue'
 import SalesPoints from './components/SalesPoints.vue'
 import AboutProduct from './components/AboutProduct.vue'
+import LangSwitcher from './components/LangSwitcher.vue'
+import { useTranslations } from './stores/translations'
+
 import { onMounted } from 'vue'
+
+const { t } = useTranslations()
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -43,21 +48,21 @@ onMounted(() => {
                   <span class="text-gradient">Dates</span>
                 </h1>
               </div>
-              <div class="product-type">PREMIUM HALAL НАПИТОК</div>
+              <div class="product-type">{{ t('PREMIUM HALAL НАПИТОК') }}</div>
             </div>
             <p class="hero-description animate-on-scroll">
-              Натуральный финиковый напиток из Италии 
+              {{ t('Натуральный финиковый напиток из Италии') }}
               <span class="flag">🇮🇹</span>
             </p>
             <div style="color:black; font-weight: bold;" class="hero-features animate-on-scroll">
-              <span class="feature hover-scale">Без красителей</span>
+              <span class="feature hover-scale">{{ t('Без красителей') }}</span>
               <br>
-              <span class="feature hover-scale">Без консервантов</span>
+              <span class="feature hover-scale">{{ t('Без консервантов') }}</span>
               <br>
-              <span class="feature hover-scale">100% натуральный</span>
+              <span class="feature hover-scale">{{ t('100% натуральный') }}</span>
             </div>
             <a href="#about" class="btn learn-more animate-on-scroll">
-              Узнать больше
+              {{ t('Узнать больше') }}
               <span class="btn-arrow">→</span>
             </a>
           </div>
@@ -66,13 +71,14 @@ onMounted(() => {
           </div>
         </div>
       </section>
-      
-
-
 
       
       <section id="about">
         <AboutProduct />
+      </section>
+
+      <section id="specs">
+        <ProductSpecs />
       </section>
       
       <section id="company">
@@ -83,16 +89,12 @@ onMounted(() => {
         <BrandStory />
       </section>
 
-      <section  id="media">
+      <section id="media">
         <MediaSection />
       </section>
 
       <section id="sales">
         <SalesPoints />
-      </section>
-      
-      <section id="specs">
-        <ProductSpecs />
       </section>
       
       <section id="partnership">
@@ -389,7 +391,6 @@ onMounted(() => {
 .dates-img {
   width: 90px;
   height: 90px;
-  
   object-fit: contain;
 }
 

@@ -1,86 +1,111 @@
 <script setup>
 import { ref } from 'vue'
+import { useTranslations } from '../stores/translations'
 
-const storySections = ref([
-  {
-    title: 'o продукте',
-    content: 'Seven Dates Original — натуральный слабо газированный напиток на основе фиников, созданный в Италии и упакованный в Европе. Он отражает философию "чистый состав — настоящий вкус — без компромиссов".',
-    image: '/assets/story1.jpg',
-    features: [
-      '100% натуральный состав',
-      'Концентрат лучших фиников',
-      'Натуральный лимонный сок',
-      'Газированная вода',
-      'Без сахара, консервантов, красителей и кофеина',
-      'Без аллергенов',
-      'Только натуральные экстракты'
-    ]
-  },
-  {
-    title: 'Преимущества',
-    content: 'Seven Dates — это больше, чем просто напиток. Это стиль жизни, выбор осознанного потребителя и продукт, который объединяет качество, натуральность и европейские стандарты.',
-    image: '/assets/story2.jpg',
-    features: [
-      'Альтернатива сладкой газировке',
-      'Подходит для ЗОЖ-питания',
-      'Соответствует халяль-стандартам',
-      'Подходит для веганов и детей',
-      'Современный минималистичный дизайн',
-      'Премиум-качество и эко-философия'
-    ]
-  },
-  {
-    title: 'o компании',
-    content: 'METAMED — официальный представитель и дистрибьютор Seven Dates в СНГ, партнёр итальянской компании VitalyV. 25-летний опыт в логистике и дистрибуции позволяет нам обеспечить надежное сопровождение, бесперебойные поставки и развитие бренда на локальных рынках.',
-    image: '/assets/story3.jpg',
-    contact: {
-      address: 'г.Ташкент, Сергелийский район, ул. Олтин Водий 3-тупик, 111',
-      instagram: '@seven_dates.uz',
-      email: 'info@metamed.uz',
-      phone: '+998 97 757-44-88'
-    }
-  }
-])
+const { t } = useTranslations()
 </script>
 
 <template>
   <section class="brand-story">
     <div class="container">
-      <h2 style="color: rgb(25, 62, 29);" class="section-title animate-on-scroll">О Seven Dates</h2>
+      <h2 style="color: rgb(25, 62, 29);" class="section-title animate-on-scroll">{{ t('Преимущества Seven Dates') }}</h2>
       <div class="story-grid">
-        <div v-for="(section, index) in storySections" 
-             :key="index" 
-             class="story-card animate-on-scroll">
+        <div class="story-card animate-on-scroll">
           <div class="story-content">
-            <h3 class="story-title">{{ section.title }}</h3>
-            <p class="story-text">{{ section.content }}</p>
+            <h3 class="story-title">{{ t('Продукт') }}</h3>
+            <p class="story-text">{{ t('Seven Dates Original — натуральный слабо газированный напиток на основе фиников, созданный в Италии и упакованный в Европе. Он отражает философию "чистый состав — настоящий вкус — без компромиссов".') }}</p>
             
-            <div v-if="section.features" class="features-list">
-              <div v-for="(feature, idx) in section.features" 
-                   :key="idx" 
-                   class="feature-item">
+            <div class="features-list">
+              <div class="feature-item">
                 <span class="feature-icon">✓</span>
-                <span class="feature-text">{{ feature }}</span>
+                <span class="feature-text">{{ t('Концентрат лучших фиников') }}</span>
               </div>
-            </div>
-
-            <div v-if="section.contact" class="contact-info">
-              <div class="contact-item">
-                <span class="contact-icon">-</span>
-                <span>{{ section.contact.address }}</span>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Натуральный лимонный сок') }}</span>
               </div>
-              
-              <div class="contact-item">
-                <span class="contact-icon">-</span>
-                <span>{{ section.contact.email }}</span>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Газированная вода') }}</span>
               </div>
-              <div class="contact-item">
-                <span class="contact-icon">-</span>
-                <span>{{ section.contact.phone }}</span>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Без сахара, консервантов, красителей и кофеина') }}</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Без аллергенов') }}</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Только натуральные экстракты') }}</span>
               </div>
             </div>
           </div>
-          
+        </div>
+
+        <div class="story-card animate-on-scroll">
+          <div class="story-content">
+            <h3 class="story-title">{{ t('Преимущества') }}</h3>
+            <p class="story-text">{{ t('Seven Dates — это больше, чем просто напиток. Это стиль жизни, выбор осознанного потребителя и продукт, который объединяет качество, натуральность и европейские стандарты.') }}</p>
+            
+            <div class="features-list">
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Альтернатива сладкой газировке') }}</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Подходит для ЗОЖ-питания') }}</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Соответствует халяль-стандартам') }}</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Подходит для веганов и детей') }}</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Современный минималистичный дизайн') }}</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">{{ t('Премиум-качество и эко-философия') }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card animate-on-scroll">
+          <div class="story-content">
+            <h3 class="story-title">{{ t('Компания') }}</h3>
+            <p class="story-text">{{ t('METAMED — официальный представитель и дистрибьютор Seven Dates в СНГ, партнёр итальянской компании VitalyV. 25-летний опыт в логистике и дистрибуции позволяет нам обеспечить надежное сопровождение, бесперебойные поставки и развитие бренда на локальных рынках.') }}</p>
+            
+            <div class="contact-info">
+              <div class="contact-item">
+                <span class="contact-icon">-</span>
+                <span>{{ t('г.Ташкент, Сергелийский район, ул. Олтин Водий 3-тупик, 111') }}</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">-</span>
+                <span>{{ t('@seven_dates.uz') }}</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">-</span>
+                <span>{{ t('info@metamed.uz') }}</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">-</span>
+                <span>{{ t('+998 97 757-44-88') }}</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">-</span>
+                <span>{{ t('+998 97 757-44-88') }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -125,7 +150,7 @@ const storySections = ref([
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: 30px;
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
 }
@@ -188,19 +213,6 @@ const storySections = ref([
 
 .contact-icon {
   font-size: 1.2em;
-}
-
-.story-image {
-  order: 1;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-
-.story-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: var(--radius-md);
 }
 
 @media (max-width: 1200px) {

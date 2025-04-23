@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from 'vue'
+import LangSwitcher from './LangSwitcher.vue'
+import { useTranslations } from '../stores/translations'
 
+const { t } = useTranslations()
 const isMobileMenuOpen = ref(false)
 
 const toggleMobileMenu = () => {
@@ -25,10 +28,10 @@ const toggleMobileMenu = () => {
       </button>
 
       <div class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
-        <a href="#about" class="nav-link hover-scale">О продукте</a>
-        <a href="#media" class="nav-link hover-scale">Преимущества</a>
-        <a href="#sales" class="nav-link hover-scale">Точки продажи</a>
-        <a href="#contacts" class="nav-link hover-scale">Контакты</a>
+        <a href="#about" class="nav-link hover-scale">{{ t('О продукте') }}</a>
+        <a href="#story" class="nav-link hover-scale">{{ t('Преимущества') }}</a>
+        <a href="#sales" class="nav-link hover-scale">{{ t('Точки продажи') }}</a>
+        <a href="#contacts" class="nav-link hover-scale">{{ t('Контакты') }}</a>
         
         <div class="nav-contact-info">
           <a href="tel:+998977574488" class="nav-contact-link">
@@ -47,6 +50,8 @@ const toggleMobileMenu = () => {
             </a>
           </div>
         </div>
+        
+        <LangSwitcher />
       </div>
     </div>
   </nav>

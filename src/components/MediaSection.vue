@@ -1,51 +1,14 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import canImage from '../assets/can-image.png'
+import { useTranslations } from '../stores/translations'
 
+const { t } = useTranslations()
 const selectedImage = ref(null)
 const isModalOpen = ref(false)
 const isVideoPlaying = ref(false)
 const isIntersecting = ref(false)
 const videoPlayer = ref(null)
-
-const galleryImages = [
-  { 
-    src: canImage, 
-    alt: 'Seven Dates производство', 
-    title: 'Производство в Италии',
-    description: 'Современное производство с соблюдением высочайших стандартов качества'
-  },
-  { 
-    src: canImage, 
-    alt: 'Seven Dates упаковка', 
-    title: 'Современная упаковка',
-    description: 'Экологичная упаковка, сохраняющая все полезные свойства напитка'
-  },
-  { 
-    src: canImage, 
-    alt: 'Seven Dates ингредиенты', 
-    title: 'Натуральные ингредиенты',
-    description: 'Только лучшие финики и натуральные компоненты'
-  },
-  { 
-    src: canImage, 
-    alt: 'Seven Dates качество', 
-    title: 'Контроль качества',
-    description: 'Строгий контроль на всех этапах производства'
-  },
-  { 
-    src: canImage, 
-    alt: 'Seven Dates команда', 
-    title: 'Наша команда',
-    description: 'Профессионалы с многолетним опытом в индустрии'
-  },
-  { 
-    src: canImage, 
-    alt: 'Seven Dates продукт', 
-    title: 'Готовый продукт',
-    description: 'Премиальный напиток для ценителей качества'
-  }
-]
 
 const openModal = (image) => {
   selectedImage.value = image
@@ -96,45 +59,35 @@ onMounted(() => {
     </div>
     <div class="container">
       <h2 class="section-title animate-on-scroll" :class="{ 'animate-in': isIntersecting }">
-        <span class="title-accent">Seven Dates</span>
+        <span class="title-accent">{{ t('Seven Dates') }}</span>
       </h2>
       
       <div class="media-content">
         <div class="product-info animate-on-scroll" :class="{ 'animate-in': isIntersecting }">
-          <h3 class="product-subtitle">Premium Halal напиток на основе финикового концентрата</h3>
+          <h3 class="product-subtitle">{{ t('Premium Halal напиток на основе финикового концентрата') }}</h3>
           
-          <div class="benefits-grid">
-            <div class="benefit-item" v-for="(benefit, index) in benefits" :key="index" :style="{ '--delay': index * 0.2 + 's' }">
-              <div class="benefit-icon">{{ benefit.icon }}</div>
-              <div class="benefit-content">
-                <h4>{{ benefit.title }}</h4>
-                <p>{{ benefit.description }}</p>
-              </div>
-            </div>
-          </div>
-
           <div class="product-features">
-            <h4>Содержит:</h4>
+            <h4>{{ t('Содержит:') }}</h4>
             <ul>
-              <li>Витамины B-комплекс</li>
-              <li>Витамин C</li>
-              <li>Магний (Mg)</li>
-              <li>Калий (K)</li>
-              <li>Кальций (Ca)</li>
-              <li>Железо (Fe)</li>
-              <li>Антиоксиданты</li>
+              <li>{{ t('Витамины B-комплекс') }}</li>
+              <li>{{ t('Витамин C') }}</li>
+              <li>{{ t('Магний (Mg)') }}</li>
+              <li>{{ t('Калий (K)') }}</li>
+              <li>{{ t('Кальций (Ca)') }}</li>
+              <li>{{ t('Железо (Fe)') }}</li>
+              <li>{{ t('Антиоксиданты') }}</li>
             </ul>
           </div>
 
           <div class="product-features">
-            <h4>Не содержит:</h4>
+            <h4>{{ t('Не содержит:') }}</h4>
             <ul>
-              <li>Синтетических добавок</li>
-              <li>Консервантов</li>
-              <li>Красителей</li>
-              <li>Кофеина</li>
-              <li>Бисфенола А</li>
-              <li>Добавленного сахара</li>
+              <li>{{ t('Синтетических добавок') }}</li>
+              <li>{{ t('Консервантов') }}</li>
+              <li>{{ t('Красителей') }}</li>
+              <li>{{ t('Кофеина') }}</li>
+              <li>{{ t('Бисфенола А') }}</li>
+              <li>{{ t('Добавленного сахара') }}</li>
             </ul>
           </div>
         </div>
@@ -150,7 +103,7 @@ onMounted(() => {
               class="video-element"
             >
               <source src="../assets/sevendates.mp4" type="video/mp4">
-              Ваш браузер не поддерживает видео тег.
+              {{ t('Ваш браузер не поддерживает видео тег.') }}
             </video>
             <div class="video-overlay">
               <button class="play-button" @click="toggleVideo">

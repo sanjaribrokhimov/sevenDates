@@ -1,53 +1,49 @@
+<script setup>
+import { useTranslations } from '../stores/translations'
+
+const { t } = useTranslations()
+</script>
+
 <template>
   <section id="about" class="about-section">
     <div class="container">
-      <h2 class="section-title animate-on-scroll">
-        О продукте
-      </h2>
-      
+      <h2 class="section-title">{{ t('О продукте') }}</h2>
       <div class="about-content">
-        <div class="product-image animate-on-scroll">
-          <img src="../assets/img1.png" alt="Seven Dates Original" class="product-img">
-        </div>
-        
-        <div class="product-info animate-on-scroll">
-          <h3 class="product-title">Seven Dates ORIGINAL</h3>
+        <div class="product-info">
+          <h3 class="product-title">{{ t('Seven Dates ORIGINAL') }}</h3>
           <p class="product-description">
-            Здоровый финиковый напиток премиум-класса, созданный в Италии. 
-            Исключительно из отборных фиников, без добавления сахара, консервантов и искусственных красителей.
-            Полезная альтернатива газированным напиткам.
+            {{ t('Здоровый финиковый напиток премиум-класса, созданный в Италии. Исключительно из отборных фиников, без добавления сахара, консервантов и искусственных красителей. Полезная альтернатива газированным напиткам.') }}
           </p>
-          
           <div class="product-features">
             <div class="feature-item">
               <span class="feature-icon">🌿</span>
-              <span class="feature-text">100% натуральный состав</span>
+              <span class="feature-text">{{ t('100% натуральный состав') }}</span>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">❤️</span>
-              <span class="feature-text">Полезный для здоровья</span>
+              <span class="feature-icon">💪</span>
+              <span class="feature-text">{{ t('Полезный для здоровья') }}</span>
             </div>
             <div class="feature-item">
               <span class="feature-icon">📦</span>
-              <span class="feature-text">Картонная упаковка без пластика</span>
+              <span class="feature-text">{{ t('Картонная упаковка без пластика') }}</span>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">🌍</span>
-              <span class="feature-text">Международные стандарты качества</span>
+              <span class="feature-icon">⭐</span>
+              <span class="feature-text">{{ t('Международные стандарты качества') }}</span>
             </div>
           </div>
-          
-          <div class="product-benefits">
-            <h4>Преимущества:</h4>
+          <div class="product-composition">
+            <h4>{{ t('Состав:') }}</h4>
             <ul>
-              <li>Источник натуральных витаминов и минералов</li>
-              <li>Поддерживает здоровый образ жизни</li>
-              <li>Укрепляет иммунитет</li>
-              <li>Богат антиоксидантами</li>
-              <li>Натуральный источник энергии</li>
-              <li>Экологичная упаковка</li>
+              <li>{{ t('Финиковый концентрат') }}</li>
+              <li>{{ t('Натуральный лимонный сок') }}</li>
+              <li>{{ t('Газированная вода') }}</li>
+              <li>{{ t('Натуральные экстракты') }}</li>
             </ul>
           </div>
+        </div>
+        <div class="product-image">
+          <img src="../assets/img1.png" alt="Seven Dates Original" class="product-img">
         </div>
       </div>
     </div>
@@ -57,7 +53,7 @@
 <style scoped>
 .about-section {
   padding: 6rem 0;
- color: black;
+  color: black;
   position: relative;
   overflow: hidden;
 }
@@ -155,11 +151,10 @@
 
 .feature-text {
   font-size: 1rem;
-  
   font-weight: 500;
 }
 
-.product-benefits {
+.product-composition {
   background: rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: var(--radius-lg);
@@ -167,13 +162,13 @@
   border: 1px solid var(--color-gold);
 }
 
-.product-benefits h4 {
+.product-composition h4 {
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
   font-family: var(--font-secondary);
 }
 
-.product-benefits ul {
+.product-composition ul {
   list-style: none;
   padding: 0;
   display: flex;
@@ -181,13 +176,13 @@
   gap: 1rem;
 }
 
-.product-benefits li {
+.product-composition li {
   position: relative;
   padding-left: 2rem;
   line-height: 1.6;
 }
 
-.product-benefits li::before {
+.product-composition li::before {
   content: '✓';
   position: absolute;
   left: 0;

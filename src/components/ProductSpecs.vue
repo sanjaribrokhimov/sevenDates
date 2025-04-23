@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import { useTranslations } from '../stores/translations'
+
+const { t } = useTranslations()
 
 const productSpecs = ref({
   title: 'Технические характеристики',
@@ -37,19 +40,18 @@ const productSpecs = ref({
   <section id="specs" class="specs-section">
     <div class="container">
       <h2 class="section-title animate-on-scroll">
-        Технические характеристики
+        {{ t('Технические характеристики') }}
       </h2>
 
       <div class="specs-grid">
         <div class="spec-card animate-on-scroll">
           <div class="spec-icon">📦</div>
           <div class="spec-content">
-            <h3>Упаковка</h3>
+            <h3>{{ t('Упаковка') }}</h3>
             <ul class="spec-list">
-              <li>Объем: 250 мл</li>
-              <li>Материал: Алюминий</li>
-              <li>Без БФА</li>
-              <li>Срок годности: 24 месяца</li>
+              <li>• {{ t('Объём') }}: 250 мл</li>
+              <li>• {{ t('Материал') }}: {{ t('Алюминий') }} ({{ t('Без БФА') }})</li>
+              <li>• {{ t('Срок годности') }}: 14 {{ t('месяца') }}</li>
             </ul>
           </div>
         </div>
@@ -57,12 +59,12 @@ const productSpecs = ref({
         <div class="spec-card animate-on-scroll">
           <div class="spec-icon">🌱</div>
           <div class="spec-content">
-            <h3>Состав</h3>
+            <h3>{{ t('Состав') }}</h3>
             <ul class="spec-list">
-              <li>Финиковый концентрат</li>
-              <li>Очищенная вода</li>
-              <li>Натуральные экстракты</li>
-              <li>Без консервантов</li>
+              <li>• {{ t('Очищенная вода') }}</li>
+              <li>• {{ t('Финиковый концентрат') }}</li>
+              <li>• {{ t('Натуральный лимонный сок') }}</li>
+              <li>• {{ t('Газированная вода') }}</li>
             </ul>
           </div>
         </div>
@@ -70,12 +72,12 @@ const productSpecs = ref({
         <div class="spec-card animate-on-scroll">
           <div class="spec-icon">📊</div>
           <div class="spec-content">
-            <h3>Пищевая ценность на 100мл</h3>
+            <h3>{{ t('Пищевая ценность') }}<br>{{ t('на 100мл') }}</h3>
             <ul class="spec-list">
-              <li>Энергетическая ценность: 45 ккал</li>
-              <li>Белки: 0.5 г</li>
-              <li>Жиры: 0 г</li>
-              <li>Углеводы: 11 г</li>
+              <li>• {{ t('Энергетическая ценность') }}: 45 {{ t('ккал') }}</li>
+              <li>• {{ t('Белки') }}: 0.5 {{ t('г') }}</li>
+              <li>• {{ t('Жиры') }}: 0 {{ t('г') }}</li>
+              <li>• {{ t('Углеводы') }}: 11 {{ t('г') }}</li>
             </ul>
           </div>
         </div>
@@ -83,12 +85,12 @@ const productSpecs = ref({
         <div class="spec-card animate-on-scroll">
           <div class="spec-icon">🏆</div>
           <div class="spec-content">
-            <h3>Сертификация</h3>
+            <h3>{{ t('Сертификация') }}</h3>
             <ul class="spec-list">
-              <li>ISO 9001:2015</li>
-              <li>HACCP</li>
-              <li>Halal</li>
-              <li>FDA Registered</li>
+              <li>• {{ t('ISO 9001:2015') }}</li>
+              <li>• {{ t('HACCP') }}</li>
+              <li>• Halal</li>
+              <li>• FDA Registered</li>
             </ul>
           </div>
         </div>
