@@ -43,7 +43,19 @@ const { t } = useTranslations()
           </div>
         </div>
         <div class="product-image">
-          <img src="../assets/img1.png" alt="Seven Dates Original" class="product-img">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <video 
+              src="../assets/imgMov.MOV" 
+              alt="Seven Dates Original" 
+              class="product-img"
+              autoplay
+              loop
+              muted
+              playsinline
+            >
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -86,19 +98,39 @@ const { t } = useTranslations()
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1000px;
+}
+
+.phone-frame {
+  position: relative;
+  background: linear-gradient(145deg, #0c3e1a, #13390f);
+  border-radius: 50px;
+  padding: 15px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 2px rgba(255, 215, 0, 0.1);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 30px;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 2;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .product-img {
   max-width: 100%;
+  width: 400px;
   height: auto;
-  object-fit: contain;
-  transform: rotate(-15deg);
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
-  transition: transform 0.3s ease;
-}
-
-.product-image:hover .product-img {
-  transform: rotate(-10deg) scale(1.05);
+  object-fit: cover;
+  border-radius: 35px;
 }
 
 .product-info {
@@ -226,6 +258,21 @@ const { t } = useTranslations()
   .product-features {
     grid-template-columns: 1fr;
   }
+
+  .phone-frame {
+    padding: 12px;
+    border-radius: 40px;
+  }
+
+  .phone-notch {
+    width: 150px;
+    height: 25px;
+  }
+
+  .product-img {
+    width: 300px;
+    border-radius: 30px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -243,6 +290,21 @@ const { t } = useTranslations()
 
   .feature-text {
     font-size: 0.9rem;
+  }
+
+  .phone-frame {
+    padding: 10px;
+    border-radius: 35px;
+  }
+
+  .phone-notch {
+    width: 130px;
+    height: 22px;
+  }
+
+  .product-img {
+    width: 250px;
+    border-radius: 25px;
   }
 }
 </style> 

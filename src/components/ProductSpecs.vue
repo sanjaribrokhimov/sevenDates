@@ -42,7 +42,7 @@ const productSpecs = ref({
       <h2 class="section-title animate-on-scroll">
         {{ t('Технические характеристики') }}
       </h2>
-
+      
       <div class="specs-grid">
         <div class="spec-card animate-on-scroll">
           <div class="spec-icon">📦</div>
@@ -94,6 +94,12 @@ const productSpecs = ref({
             </ul>
           </div>
         </div>
+
+        <div class="specs-image-container animate-on-scroll">
+          <img src="../assets/img2.png" alt="" class="specs-image">
+         
+          <img src="../assets/img3.png" alt="" class="specs-image">
+        </div>
       </div>
     </div>
   </section>
@@ -136,8 +142,11 @@ const productSpecs = ref({
 
 .specs-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* 4 блока в ряд */
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .spec-card {
@@ -157,15 +166,16 @@ const productSpecs = ref({
 .spec-icon {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  display: inline-block;
-  animation: float 3s ease-in-out infinite;
+}
+
+.spec-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .spec-content h3 {
-  font-size: 1.3rem;
-  color: var(--color-primary);
   margin-bottom: 1rem;
-  font-family: var(--font-secondary);
 }
 
 .spec-list {
@@ -197,32 +207,166 @@ const productSpecs = ref({
   .specs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .specs-image-container {
+    grid-column: 1 / span 2;
+    grid-row: auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .specs-image {
+    width: 40%;
+    height: 250px;
+  }
+
+  .image-overlay {
+    width: 40%;
+    top: 10%;
+  }
 }
 
 @media (max-width: 768px) {
   .specs-section {
-    padding: 4rem 0;
+    padding: 3rem 1rem;
   }
 
   .section-title {
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
   }
 
   .specs-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
+  }
+  
+  .spec-card {
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+    background: white;
+    border-radius: 20px;
+  }
+
+  .spec-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .spec-content {
+    text-align: center;
+  }
+
+  .spec-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .spec-list {
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  .spec-list li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .specs-image-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .specs-image {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background: white;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .image-overlay {
+    width: 100%;
+    top: 10%;
+  }
+
+  .overlay-text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .specs-section {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
   }
 
   .spec-card {
     padding: 1.5rem;
   }
 
-  .spec-icon {
-    font-size: 2rem;
+  .spec-content h3 {
+    font-size: 1.3rem;
   }
 
-  .spec-content h3 {
-    font-size: 1.2rem;
+  .specs-image {
+    height: 240px;
   }
+
+  .overlay-text {
+    font-size: 1.8rem;
+  }
+}
+
+.specs-image-container {
+  grid-column: 3 / span 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.specs-image {
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 50%;
+  text-align: center;
+  z-index: 2;
+}
+
+.overlay-text {
+  font-family: var(--font-secondary);
+  font-size: 2.5rem;
+  color: #2E4A2F;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 </style> 

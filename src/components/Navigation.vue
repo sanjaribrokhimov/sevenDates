@@ -18,14 +18,16 @@ const toggleMobileMenu = () => {
       <a href="#" class="logo">
         <span class="text-gradient">SevenDates</span>
         <img src="../assets/finiki.png" alt="Финики" class="dates-img">
-
       </a>
       
-      <button class="mobile-menu-btn" @click="toggleMobileMenu" :class="{ 'active': isMobileMenuOpen }">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="mobile-controls">
+        <LangSwitcher class="mobile-lang-switcher" />
+        <button class="mobile-menu-btn" @click="toggleMobileMenu" :class="{ 'active': isMobileMenuOpen }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
 
       <div class="nav-links" :class="{ 'mobile-open': isMobileMenuOpen }">
         <a href="#about" class="nav-link hover-scale">{{ t('О продукте') }}</a>
@@ -50,8 +52,7 @@ const toggleMobileMenu = () => {
             </a>
           </div>
         </div>
-        
-        <LangSwitcher />
+        <LangSwitcher class="desktop-lang-switcher" />
       </div>
     </div>
   </nav>
@@ -124,6 +125,20 @@ const toggleMobileMenu = () => {
   color: var(--color-secondary);
 }
 
+.mobile-controls {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-lang-switcher {
+  display: none;
+}
+
+.desktop-lang-switcher {
+  display: flex;
+}
+
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
@@ -157,6 +172,23 @@ const toggleMobileMenu = () => {
 }
 
 @media (max-width: 768px) {
+  .mobile-controls {
+    display: flex;
+  }
+
+  .mobile-lang-switcher {
+    display: flex;
+  }
+
+  .desktop-lang-switcher {
+    display: none;
+  }
+
+  .mobile-lang-switcher :deep(.lang-btn) {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
   .mobile-menu-btn {
     display: flex;
   }
